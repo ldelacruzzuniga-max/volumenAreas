@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Área y Volumen</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }
+        .box { border: 1px solid #ccc; padding: 15px; border-radius: 8px; max-width: 450px; }
+        .oculto { display: none; }
+        label, select, input, button { display: block; margin-bottom: 10px; width: 100%; box-sizing: border-box; }
+        button { padding: 8px; background-color: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background-color: #0056b3; }
+        #resultado { font-weight: bold; margin-top: 15px; color: #28a745; }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <h2>Calculadora de Geometría</h2>
+        
+        <!-- 1. Selección de Modo -->
+        <label for="selectModo">¿Qué deseas calcular?</label>
+        <select id="selectModo">
+            <option value="">-- Selecciona una opción --</option>
+            <option value="volumen">Volumen</option>
+            <option value="area">Área</option>
+        </select>
+
+        <!-- 2. Selección de Figura (dinámica según el modo) -->
+        <div id="contenedorFigura" class="oculto">
+            <label for="selectFigura">Selecciona la figura:</label>
+            <select id="selectFigura"></select>
+        </div>
+
+        <!-- 3. Formulario dinámico para entradas -->
+        <form id="formInputs" class="oculto">
+            <div id="camposDinamicos"></div>
+            <button type="submit">Calcular</button>
+        </form>
+
+        <!-- 4. Contenedor del Resultado -->
+        <div id="resultado"></div>
+        <p><small id="ultimoCalculoSaved"></small></p>
+    </div>
+
+    <!-- Enlace al archivo JS -->
+    <script src="script.js"></script>
+</body>
+</html>
